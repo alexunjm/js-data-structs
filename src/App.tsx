@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { NumberSorter } from "./components/bst";
+import PrintTree from "./components/print-tree";
+
+const bst = new NumberSorter();
+let num: number;
+for (let i = 0; i < 9; i++) {
+  num = parseInt((Math.random() * 99).toFixed(0));
+  bst.insert(num);
+}
+
+const root = bst.getRootNode() || { value: 0 };
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PrintTree node={root} />
     </div>
   );
 }

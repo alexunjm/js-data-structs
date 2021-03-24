@@ -1,0 +1,20 @@
+.tree {
+  flex-wrap: wrap;
+  text-align: center;
+}
+.children {
+  display: flex;
+}
+.value {
+  flex-basis: 100%;
+}
+.value > span {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  display: inline-block;
+}
+.children > .tree {
+  flex: 1;
+}
